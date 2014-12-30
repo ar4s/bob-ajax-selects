@@ -197,7 +197,7 @@ class CascadeSelect(forms.Select):
         self.channel = channel
 
     def render(self, name, value, attrs=None, choices=()):
-        t = Template('{% url ajax_lookup channel %}')
+        t = Template('{% url "ajax_lookup" channel %}')
         c = Context({'channel': self.channel})
         channel = t.render(c)
         attrs.update({'data-channel': channel})
